@@ -64,6 +64,7 @@ type tlsOptions struct {
 
 func (cfg *tlsOptions) toProtoConfig() *proto.TLSEndpoint {
 	opts := &proto.TLSEndpoint{
+		URL:        cfg.URL,
 		Domain:     cfg.Domain,
 		ProxyProto: proto.ProxyProto(cfg.ProxyProto),
 

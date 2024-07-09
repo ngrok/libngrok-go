@@ -1,6 +1,8 @@
 package config
 
+// TODO: (Kristopher If this works remove from other structs
 type commonOpts struct {
+	URL string
 	// Restrictions placed on the origin of incoming connections to the edge.
 	CIDRRestrictions *cidrRestrictions
 	// The version of PROXY protocol to use with this tunnel, zero if not
