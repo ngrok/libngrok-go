@@ -38,6 +38,9 @@ type httpOptions struct {
 	// Defaults to [SchemeHTTPS].
 	Scheme Scheme
 
+	// The URL to request for this endpoint
+	URL string
+
 	// The fqdn to request for this edge
 	Domain string
 
