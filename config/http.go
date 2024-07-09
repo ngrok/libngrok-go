@@ -91,6 +91,7 @@ type httpOptions struct {
 
 func (cfg *httpOptions) toProtoConfig() *proto.HTTPEndpoint {
 	opts := &proto.HTTPEndpoint{
+		URL:       cfg.URL,
 		Domain:    cfg.Domain,
 		Hostname:  cfg.Hostname,
 		Subdomain: cfg.Subdomain,

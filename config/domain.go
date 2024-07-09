@@ -21,7 +21,7 @@ func (opt urlOption) ApplyTLS(opts *tlsOptions) {
 	opts.URL = string(opt)
 }
 
-func (opt urlOption) ApplyTCP(opts *httpOptions) {
+func (opt urlOption) ApplyTCP(opts *tcpOptions) {
 	opts.URL = string(opt)
 }
 
