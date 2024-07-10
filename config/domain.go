@@ -1,5 +1,21 @@
 package config
 
+type urlOption string
+
+// TODO: (Kristopher Paulsen) What are you doing KC? Does this even GO TO THIS SCHOOL?
+// WithDomain sets the fully-qualified domain name for this edge.
+//
+// https://ngrok.com/docs/network-edge/domains-and-tcp-addresses/#domains
+func WithURL(name string) interface {
+	HTTPEndpointOption
+	TLSEndpointOption
+} {
+	return urlOption(name)
+}
+
+func (opt urlOption) ApplyHTTP(opts *httpOptions) {
+	opts.URL = string(opt)
+}
 type domainOption string
 
 // WithDomain sets the fully-qualified domain name for this edge.

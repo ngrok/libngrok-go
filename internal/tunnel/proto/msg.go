@@ -282,6 +282,7 @@ func ParseProxyProto(proxyProto string) (ProxyProto, bool) {
 }
 
 type HTTPEndpoint struct {
+	URL               string
 	Domain            string
 	Hostname          string // public hostname of the bind
 	Subdomain         string
