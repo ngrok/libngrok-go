@@ -52,7 +52,6 @@ func WithRemoteAddr(addr string) TCPEndpointOption {
 
 func (cfg *tcpOptions) toProtoConfig() *proto.TCPEndpoint {
 	return &proto.TCPEndpoint{
-		URL:           cfg.URL,
 		Addr:          cfg.RemoteAddr,
 		IPRestriction: cfg.commonOpts.CIDRRestrictions.toProtoConfig(),
 		ProxyProto:    proto.ProxyProto(cfg.commonOpts.ProxyProto),

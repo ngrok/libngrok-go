@@ -282,11 +282,12 @@ func ParseProxyProto(proxyProto string) (ProxyProto, bool) {
 }
 
 type HTTPEndpoint struct {
-	URL               string
 	Domain            string
 	Hostname          string // public hostname of the bind
 	Subdomain         string
 	Auth              string
+	Description       string
+	Metadata          string
 	HostHeaderRewrite bool   // true if the request's host header is being rewritten
 	LocalURLScheme    string // scheme of the local forward
 	ProxyProto
@@ -309,8 +310,9 @@ type HTTPEndpoint struct {
 }
 
 type TCPEndpoint struct {
-	URL  string
-	Addr string
+	Description string
+	Metadata    string
+	Addr        string
 	ProxyProto
 
 	// middleware
@@ -320,10 +322,11 @@ type TCPEndpoint struct {
 }
 
 type TLSEndpoint struct {
-	URL       string
-	Domain    string
-	Hostname  string // public hostname of the bind
-	Subdomain string
+	Description string
+	Metadata    string
+	Domain      string
+	Hostname    string // public hostname of the bind
+	Subdomain   string
 	ProxyProto
 	MutualTLSAtAgent bool
 
